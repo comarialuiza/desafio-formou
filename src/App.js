@@ -1,10 +1,14 @@
 import React from 'react';
 
-import TaskList from './components/TaskList.js';
+import Routes from './routes';
+import GlobalStyle from './styles/global';
 
 function App() {
   return (
-    <TaskList />
+    <>
+      <Routes />
+      <GlobalStyle />
+    </>
   );
 }
 
