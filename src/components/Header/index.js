@@ -5,8 +5,8 @@ import { Container, Head } from './styles';
 
 export default function Header({ active }) {
     const [ activeMenu, setActiveMenu ] = useState('tasks');
-
-    console.log(active);
+    
+    /* activeMenu === 'tasks' ? setActiveMenu('tasks') : setActiveMenu('users'); */
 
     return(
         <Head>

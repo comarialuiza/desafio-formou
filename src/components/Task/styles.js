@@ -16,3 +16,12 @@ export const Tag = styled.span`
     border-radius: 3px;
     color: ${props => props.color}
 `;
+
+export const TaskAssigned = styled.span`
+    width: 200px;
+    text-align: center;
+`;
+
+export const TaskText = styled.span`
+    width: calc(100% - 200px - 90px);
+`;

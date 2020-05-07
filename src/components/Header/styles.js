@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.header`
-    max-width: 1140px;
+    max-width: 1368px;
     margin: 0 auto;
     display: flex;
     align-items: center;
