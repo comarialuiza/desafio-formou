@@ -1,11 +1,7 @@
 import styled from 'styled-components';
 
-export const Container = styled.p`
+export const Container = styled.tr`
     padding: 20px 0;
-    border-bottom: 1px solid #eee;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
 `;
 
 export const Tag = styled.span`
@@ -14,14 +10,21 @@ export const Tag = styled.span`
     text-align: center;
     background-color: ${props => props.bgColor};
     border-radius: 3px;
-    color: ${props => props.color}
+    color: ${props => props.color};
+    display: block;
+    margin: 0 auto;
 `;
 
 export const TaskAssigned = styled.span`
-    width: 200px;
     text-align: center;
+
+    a {
+        color: #143EA3;
+        text-decoration: underline;
+    }
 `;
 
-export const TaskText = styled.span`
-    width: calc(100% - 200px - 90px);
+export const Content = styled.td`
+    padding: 10px 0;
+    border-bottom: 1px solid #E8ECEF;
 `;
