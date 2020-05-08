@@ -1,23 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 
 import { Container, Head, HeadContent } from './styles';
 import Task from '../Task';
+import { TaskContext } from './../../context/TaskContext';
 
-import api from './../../services/api';
-
-export default function TaskList() {
-    const [ tasks, setTasks ] = useState([]);
-    const [ users, setUsers ] = useState([]);
-
-    useEffect(() => {
-        api.get('todos').then(res => {
-            setTasks(res.data);
-        });
-
-        api.get('users').then(res => {
-            setUsers(res.data);
-        }) 
-    }, []);
+export default function TaskList({ tasks }) {
+    const value = useContext(TaskContext);
 
     return(
         <Container>
@@ -28,12 +16,14 @@ export default function TaskList() {
                     <HeadContent>Status</HeadContent>
                 </tr>
             </Head>
-            { tasks.map(task => ( 
-                <Task 
-                    key={ task.id } 
-                    user={ users.filter(user => user.id === task.userId).map(filteredUser => filteredUser.name) } 
-                    data={ task } 
-                />
+            { value.tasks.map(task => ( 
+                <>
+                    <Task 
+                        key={ task.id } 
+                        user={ value.users.filter(user => user.id === task.userId).map(filteredUser => filteredUser.name) } 
+                        data={ task } 
+                    />
+                </>
             ))}
         </Container>
     );
