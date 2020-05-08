@@ -3,9 +3,11 @@ import React, { useContext } from 'react';
 import { Container, Head, HeadContent } from './styles';
 import Task from '../Task';
 import { TaskContext } from './../../context/TaskContext';
+import { UserContext } from './../../context/UserContext';
 
-export default function TaskList({ tasks }) {
-    const value = useContext(TaskContext);
+export default function TaskList() {
+    const [ tasks ] = useContext(TaskContext);
+    const [ users ] = useContext(UserContext);
 
     return(
         <Container>
@@ -16,15 +18,16 @@ export default function TaskList({ tasks }) {
                     <HeadContent>Status</HeadContent>
                 </tr>
             </Head>
-            { value.tasks.map(task => ( 
-                <>
+            <tbody>
+                { tasks.map(task => (
                     <Task 
                         key={ task.id } 
-                        user={ value.users.filter(user => user.id === task.userId).map(filteredUser => filteredUser.name) } 
+                        user={ users.filter(user => user.id === task.userId).map(filteredUser => filteredUser.name) } 
+                        userId={ users.filter(user => user.id === task.userId).map(userId => userId.id) }
                         data={ task } 
                     />
-                </>
-            ))}
+                ))}
+            </tbody>
         </Container>
     );
 }
