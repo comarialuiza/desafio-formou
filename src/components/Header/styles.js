@@ -17,7 +17,14 @@ export const Container = styled.header`
         text-transform: uppercase;
         font-size: 20px;
         font-weight: 300;
-        margin-right: 70px;
+
+        @media (min-width: 791px) {
+            margin-right: 70px;
+        }
+
+        @media (max-width: 790px) {
+            margin-right: 30px;
+        }
     }
 
     .link {
@@ -45,5 +52,12 @@ export const Divider = styled.span`
     width: 1px;
     background-color: #efefef;
     display: block;
-    margin: 0 30px;
+
+    @media (min-width: 791px) {
+        margin: 0 30px;
+    }
+
+    @media (max-width: 790px) {
+        margin: 0 10px;
+    }
 `;

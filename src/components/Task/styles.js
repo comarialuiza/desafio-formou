@@ -25,6 +25,13 @@ export const TaskAssigned = styled.span`
 `;
 
 export const Content = styled.td`
-    padding: 10px 0;
     border-bottom: 1px solid #E8ECEF;
+
+    @media (min-width: 791px) {
+        padding: 10px 0;
+    }
+
+    @media (max-width: 790px) {
+        padding: 10px;
+    }
 `;

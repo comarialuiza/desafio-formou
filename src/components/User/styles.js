@@ -1,13 +1,20 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-    padding: 40px;
     box-sizing: border-box;
     border-radius: 4px;
     background: #fff;
     display: flex;
     align-items: center;
     justify-content: flex-start;
+
+    @media (min-width: 791px) {
+        padding: 40px;
+    }
+
+    @media (max-width: 790px) {
+        padding: 20px 0;
+    }
 `;
 
 export const Image = styled.div`
@@ -15,10 +22,17 @@ export const Image = styled.div`
     width: 132px;
     background: #EFEFEF;
     border-radius: 50%;
-    margin-right: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @media (min-width: 791px) {
+        margin-right: 40px;
+    }
+
+    @media (max-width: 790px) {
+        margin-right: 20px;
+    }
 
     svg {
         height: 60px;
@@ -28,6 +42,16 @@ export const Image = styled.div`
 `;
 
 export const UserInfo = styled.div`
+    word-break: break-word;
+
+    @media (min-width: 791px) {
+        width: calc(100% - 132px - 40px);
+    }
+
+    @media (max-width: 790px) {
+        width: calc(100% - 132px - 20px);
+    }
+
     .name {
         font-weight: bold;
         font-size: 18px;
